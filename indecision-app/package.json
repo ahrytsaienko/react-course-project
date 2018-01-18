@@ -1,0 +1,19 @@
+{
+  "name": "react-app",
+  "version": "1.0.0",
+  "description": "react simple app",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/temsan89/react-course-project.git"
+  },
+  "author": "temsan89",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/temsan89/react-course-project/issues"
+  },
+  "homepage": "https://github.com/temsan89/react-course-project#readme"
+}
