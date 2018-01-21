@@ -1,27 +1,15 @@
-console.log('app.js is running')
+let titleStructure = {
+    title: 'Indecision app',
+    subtitle: 'Subtitle example',
+}
 
-// JSX - javascript XML
-let template = (
+let headerTemplate = (
     <div>
-        <h1>Indecision App</h1>
-        <p>Some info</p>
-        <ol>
-            <li>Item one</li>
-            <li>Item two</li>
-        </ol>
+        <h1>{titleStructure.title}</h1>
+        <h2>{titleStructure.subtitle}</h2>
     </div>
 );
 
-let someTemplate = (
-    <div>
-        <h1>Some element</h1>
-        <p>test1</p>
-        <p>test2</p>
-    </div>
-);
+var header = document.getElementById('header');
 
-let appRoot = document.getElementById('app');
-let secondApp = document.getElementById('app_second');
-
-ReactDOM.render(template, appRoot);
-ReactDOM.render(someTemplate, secondApp);
+ReactDOM.render(headerTemplate, header);

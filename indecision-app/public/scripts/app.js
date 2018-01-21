@@ -1,59 +1,25 @@
 'use strict';
 
-console.log('app.js is running');
+var titleStructure = {
+    title: 'Indecision app',
+    subtitle: 'Subtitle example'
+};
 
-// JSX - javascript XML
-var template = React.createElement(
+var headerTemplate = React.createElement(
     'div',
     null,
     React.createElement(
         'h1',
         null,
-        'Indecision App'
+        titleStructure.title
     ),
     React.createElement(
-        'p',
+        'h2',
         null,
-        'Some info'
-    ),
-    React.createElement(
-        'ol',
-        null,
-        React.createElement(
-            'li',
-            null,
-            'Item one'
-        ),
-        React.createElement(
-            'li',
-            null,
-            'Item two'
-        )
+        titleStructure.subtitle
     )
 );
 
-var someTemplate = React.createElement(
-    'div',
-    null,
-    React.createElement(
-        'h1',
-        null,
-        'Some element'
-    ),
-    React.createElement(
-        'p',
-        null,
-        'test1'
-    ),
-    React.createElement(
-        'p',
-        null,
-        'test2'
-    )
-);
+var header = document.getElementById('header');
 
-var appRoot = document.getElementById('app');
-var secondApp = document.getElementById('app_second');
-
-ReactDOM.render(template, appRoot);
-ReactDOM.render(someTemplate, secondApp);
+ReactDOM.render(headerTemplate, header);
