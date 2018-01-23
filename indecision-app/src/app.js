@@ -1,17 +1,23 @@
-// let titleStructure = {
-//     title: 'Indecision app',
-//     subtitle: 'Subtitle example',
-// }
+let head = {
+    title: 'Indecision app',
+    subtitle: 'Subtitle example',
+}
 
-// let headerTemplate = (
-//     <div>
-//         <h1>{titleStructure.title}</h1>
-//         <h2>{titleStructure.subtitle}</h2>
-//     </div>
-// );
+let main = (
+    <div>
+        <h1>{head.title}</h1>
+        {get_header(head.subtitle)}
+        {(head.subtitle ? head.subtitle: 'No subtitle')}
+    </div>
+);
 
-//var header = document.getElementById('header');
+var header = document.getElementById('header');
 
+function get_header(subtitle) {
+    if (subtitle) {
+        return <h2>{subtitle}</h2>
+    }
+};
 
 var user = {
     name: 'John',
@@ -28,13 +34,15 @@ function get_location(location) {
 var templateTwo = (
     <div>
         <h1> {user.name ? user.name : 'Anonymous'} </h1>
-        {(user.age && user.age >=18) && <p>Age {user.age}</p>}
+        {(user.age && user.age >= 18) && <p>Age{user.age}</p>}
         {get_location(user.location)}
     </div>
 
 );
 
+var header = document.getElementById('header');
 var app = document.getElementById('app');
 
-ReactDOM.render(templateTwo, header);
+ReactDOM.render(main,header);
+ReactDOM.render(templateTwo, app);
 // ReactDOM.render(templateTwo, app)

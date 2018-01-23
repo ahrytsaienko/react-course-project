@@ -1,19 +1,33 @@
 'use strict';
 
-// let titleStructure = {
-//     title: 'Indecision app',
-//     subtitle: 'Subtitle example',
-// }
+var head = {
+    title: 'Indecision app',
+    subtitle: 'Subtitle example'
+};
 
-// let headerTemplate = (
-//     <div>
-//         <h1>{titleStructure.title}</h1>
-//         <h2>{titleStructure.subtitle}</h2>
-//     </div>
-// );
+var main = React.createElement(
+    'div',
+    null,
+    React.createElement(
+        'h1',
+        null,
+        head.title
+    ),
+    get_header(head.subtitle),
+    head.subtitle ? head.subtitle : 'No subtitle'
+);
 
-//var header = document.getElementById('header');
+var header = document.getElementById('header');
 
+function get_header(subtitle) {
+    if (subtitle) {
+        return React.createElement(
+            'h2',
+            null,
+            subtitle
+        );
+    }
+};
 
 var user = {
     name: 'John',
@@ -45,13 +59,15 @@ var templateTwo = React.createElement(
     user.age && user.age >= 18 && React.createElement(
         'p',
         null,
-        'Age ',
+        'Age',
         user.age
     ),
     get_location(user.location)
 );
 
+var header = document.getElementById('header');
 var app = document.getElementById('app');
 
-ReactDOM.render(templateTwo, header);
+ReactDOM.render(main, header);
+ReactDOM.render(templateTwo, app);
 // ReactDOM.render(templateTwo, app)
