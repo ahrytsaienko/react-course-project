@@ -46,23 +46,29 @@ function get_location(location) {
     }
 };
 
-var templateTwo = React.createElement(
+var count = 0;
+var myId = 'my-id';
+var templateTwo =
+// <div>
+//     <h1> {user.name ? user.name : 'Anonymous'} </h1>
+//     {(user.age && user.age >= 18) && <p>Age{user.age}</p>}
+//     {get_location(user.location)}
+//</div>
+
+React.createElement(
     'div',
     null,
     React.createElement(
         'h1',
         null,
-        ' ',
-        user.name ? user.name : 'Anonymous',
-        ' '
+        'Count: ',
+        count
     ),
-    user.age && user.age >= 18 && React.createElement(
-        'p',
-        null,
-        'Age',
-        user.age
-    ),
-    get_location(user.location)
+    React.createElement(
+        'button',
+        { id: myId, className: 'button' },
+        '+1'
+    )
 );
 
 var header = document.getElementById('header');
@@ -70,4 +76,3 @@ var app = document.getElementById('app');
 
 ReactDOM.render(main, header);
 ReactDOM.render(templateTwo, app);
-// ReactDOM.render(templateTwo, app)

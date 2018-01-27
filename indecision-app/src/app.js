@@ -31,11 +31,18 @@ function get_location(location) {
     }
 };
 
-var templateTwo = (
+let count = 0;
+const myId = 'my-id'
+const templateTwo = (
+    // <div>
+    //     <h1> {user.name ? user.name : 'Anonymous'} </h1>
+    //     {(user.age && user.age >= 18) && <p>Age{user.age}</p>}
+    //     {get_location(user.location)}
+    //</div>
+
     <div>
-        <h1> {user.name ? user.name : 'Anonymous'} </h1>
-        {(user.age && user.age >= 18) && <p>Age{user.age}</p>}
-        {get_location(user.location)}
+        <h1>Count: {count}</h1>
+        <button id={myId} className="button">+1</button>
     </div>
 
 );
@@ -45,4 +52,3 @@ var app = document.getElementById('app');
 
 ReactDOM.render(main,header);
 ReactDOM.render(templateTwo, app);
-// ReactDOM.render(templateTwo, app)
