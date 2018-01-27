@@ -7,7 +7,7 @@ let main = (
     <div>
         <h1>{head.title}</h1>
         {get_header(head.subtitle)}
-        {(head.subtitle ? head.subtitle: 'No subtitle')}
+        {(head.subtitle ? head.subtitle : 'No subtitle')}
     </div>
 );
 
@@ -32,7 +32,9 @@ function get_location(location) {
 };
 
 let count = 0;
-const myId = 'my-id'
+const addOne = () => {
+    console.log("click here");
+};
 const templateTwo = (
     // <div>
     //     <h1> {user.name ? user.name : 'Anonymous'} </h1>
@@ -42,7 +44,7 @@ const templateTwo = (
 
     <div>
         <h1>Count: {count}</h1>
-        <button id={myId} className="button">+1</button>
+        <button onClick={addOne}>+1</button>
     </div>
 
 );
@@ -50,5 +52,5 @@ const templateTwo = (
 var header = document.getElementById('header');
 var app = document.getElementById('app');
 
-ReactDOM.render(main,header);
+ReactDOM.render(main, header);
 ReactDOM.render(templateTwo, app);

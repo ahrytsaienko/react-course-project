@@ -47,7 +47,9 @@ function get_location(location) {
 };
 
 var count = 0;
-var myId = 'my-id';
+var addOne = function addOne() {
+    console.log("click here");
+};
 var templateTwo =
 // <div>
 //     <h1> {user.name ? user.name : 'Anonymous'} </h1>
@@ -66,7 +68,7 @@ React.createElement(
     ),
     React.createElement(
         'button',
-        { id: myId, className: 'button' },
+        { onClick: addOne },
         '+1'
     )
 );
