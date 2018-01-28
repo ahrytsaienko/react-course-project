@@ -11,8 +11,6 @@ let main = (
     </div>
 );
 
-var header = document.getElementById('header');
-
 function get_header(subtitle) {
     if (subtitle) {
         return <h2>{subtitle}</h2>
@@ -35,24 +33,44 @@ let count = 0;
 const addOne = () => {
     console.log("click here");
 };
-const templateTwo = (
-    // <div>
-    //     <h1> {user.name ? user.name : 'Anonymous'} </h1>
-    //     {(user.age && user.age >= 18) && <p>Age{user.age}</p>}
-    //     {get_location(user.location)}
-    //</div>
 
+const fnBtnOne = () => { console.log("TheOne") };
+const fnBtnTwo = () => console.log("TheTwoo");
+
+// const templateTwo = (
+//     // <div>
+//     //     <h1> {user.name ? user.name : 'Anonymous'} </h1>
+//     //     {(user.age && user.age >= 18) && <p>Age{user.age}</p>}
+//     //     {get_location(user.location)}
+//     //</div>
+
+//     <div>
+//         <h1>Count: {count}</h1>
+//         <button onClick={addOne}>+1</button>
+//     </div>
+
+// );
+
+const templatebtnOne = (
     <div>
-        <h1>Count: {count}</h1>
-        <button onClick={() => {
-            console.log("oneline");
-        }}>+1</button>
-    </div>
-
+        <button onClick={fnBtnOne}>First button</button>
+        <button onClick={fnBtnTwo}>Second button</button>
+        </div>
 );
 
-var header = document.getElementById('header');
-var app = document.getElementById('app');
+const templateTwo = (
+    <div>
+    <button onClick={fnBtnTwo}>Second button</button>    
+    </div>
+);
+
+
+const header = document.getElementById('header');
+const app = document.getElementById('app');
+const btnOne = document.getElementById('btnOne');
+const btnTwo = document.getElementById('btnTwo');
+
 
 ReactDOM.render(main, header);
-ReactDOM.render(templateTwo, app);
+ReactDOM.render(templatebtnOne, btnOne);
+ReactDOM.render(templateTwo, btnTwo)

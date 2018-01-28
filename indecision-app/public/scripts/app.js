@@ -17,8 +17,6 @@ var main = React.createElement(
     head.subtitle ? head.subtitle : 'No subtitle'
 );
 
-var header = document.getElementById('header');
-
 function get_header(subtitle) {
     if (subtitle) {
         return React.createElement(
@@ -50,33 +48,58 @@ var count = 0;
 var addOne = function addOne() {
     console.log("click here");
 };
-var templateTwo =
-// <div>
-//     <h1> {user.name ? user.name : 'Anonymous'} </h1>
-//     {(user.age && user.age >= 18) && <p>Age{user.age}</p>}
-//     {get_location(user.location)}
-//</div>
 
-React.createElement(
+var fnBtnOne = function fnBtnOne() {
+    console.log("TheOne");
+};
+var fnBtnTwo = function fnBtnTwo() {
+    return console.log("TheTwoo");
+};
+
+// const templateTwo = (
+//     // <div>
+//     //     <h1> {user.name ? user.name : 'Anonymous'} </h1>
+//     //     {(user.age && user.age >= 18) && <p>Age{user.age}</p>}
+//     //     {get_location(user.location)}
+//     //</div>
+
+//     <div>
+//         <h1>Count: {count}</h1>
+//         <button onClick={addOne}>+1</button>
+//     </div>
+
+// );
+
+var templatebtnOne = React.createElement(
     'div',
     null,
     React.createElement(
-        'h1',
-        null,
-        'Count: ',
-        count
+        'button',
+        { onClick: fnBtnOne },
+        'First button'
     ),
     React.createElement(
         'button',
-        { onClick: function onClick() {
-                console.log("oneline");
-            } },
-        '+1'
+        { onClick: fnBtnTwo },
+        'Second button'
+    )
+);
+
+var templateTwo = React.createElement(
+    'div',
+    null,
+    React.createElement(
+        'button',
+        { onClick: fnBtnTwo },
+        'Second button'
     )
 );
 
 var header = document.getElementById('header');
 var app = document.getElementById('app');
+var btnOne = document.getElementById('btnOne');
+var btnTwo = document.getElementById('btnTwo');
 
 ReactDOM.render(main, header);
-ReactDOM.render(templateTwo, app);
+ReactDOM.render(templatebtnOne, btnOne);
+ReactDOM.render(templateTwo, btnTwo);
