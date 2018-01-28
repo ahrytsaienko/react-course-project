@@ -1,60 +1,44 @@
 'use strict';
 
-var count = 0;
-
-var addOne = function addOne() {
-    count++;
-    showCount();
-    renderCount();
+var app = {
+    title: 'Indecision App',
+    subtitle: 'Put your life in the hands of computer',
+    options: ['One', 'Two']
 };
 
-var minusOne = function minusOne() {
-    count--;
-    showCount();
-    renderCount();
-};
-
-var reset = function reset() {
-    count = 0;
-    showCount();
-    renderCount();
-};
-
-var showCount = function showCount() {
-    console.log('count: ' + count);
-};
-
-var btnOne = document.getElementById('btnOne');
-
-var renderCount = function renderCount() {
-
-    var templatebtnOne = React.createElement(
-        'div',
+var template = React.createElement(
+    'div',
+    null,
+    React.createElement(
+        'h1',
+        null,
+        app.title
+    ),
+    app.subtitle && React.createElement(
+        'p',
+        null,
+        app.subtitle
+    ),
+    React.createElement(
+        'p',
+        null,
+        app.options.length > 0 ? 'Here are your options' : 'No options'
+    ),
+    React.createElement(
+        'ol',
         null,
         React.createElement(
-            'h1',
+            'li',
             null,
-            'Count: ',
-            count
+            'Item one'
         ),
         React.createElement(
-            'button',
-            { onClick: addOne },
-            'First button'
-        ),
-        React.createElement(
-            'button',
-            { onClick: minusOne },
-            'Second button'
-        ),
-        React.createElement(
-            'button',
-            { onClick: reset },
-            'Reset button'
+            'li',
+            null,
+            'Item two'
         )
-    );
+    )
+);
 
-    ReactDOM.render(templatebtnOne, btnOne);
-};
-
-renderCount();
+var appRoot = document.getElementById('app');
+ReactDOM.render(template, appRoot);
