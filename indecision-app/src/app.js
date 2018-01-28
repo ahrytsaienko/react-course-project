@@ -29,7 +29,6 @@ const onMakeDecision = () => {
 
 const appRoot = document.getElementById('app');
 
-
 const render = () => {
 
     const template = (
