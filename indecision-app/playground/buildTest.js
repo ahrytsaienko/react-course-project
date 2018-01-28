@@ -1,13 +1,9 @@
 const el = document.getElementById('el');
-let someData = '';
+let visibility = false;
 
-const onClickBtn = () => {
+const onToggleVisibility = () => {
 
-    if (someData) {
-        someData = '';
-    } else {
-        someData = 'Hey There are some details';
-    }
+    visibility = !visibility;
     render();
 };
 
@@ -16,8 +12,12 @@ const render = () => {
     const jsx = (
         <div>
             <h1>Visibility Toggle</h1>
-            <button onClick={onClickBtn}>{someData.length >0 ? 'Hidden' : 'Watch'}</button>
-            <p>{someData}</p>
+            <button onClick={onToggleVisibility}>{visibility ? 'Hide details' : 'Show details'}</button>
+            {visibility && (
+                <div>
+                    <p>Some detail</p>
+                </div>
+            )}
         </div>
     );
 

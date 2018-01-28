@@ -1,15 +1,11 @@
 'use strict';
 
 var el = document.getElementById('el');
-var someData = '';
+var visibility = false;
 
-var onClickBtn = function onClickBtn() {
+var onToggleVisibility = function onToggleVisibility() {
 
-    if (someData) {
-        someData = '';
-    } else {
-        someData = 'Hey There are some details';
-    }
+    visibility = !visibility;
     render();
 };
 
@@ -25,13 +21,17 @@ var render = function render() {
         ),
         React.createElement(
             'button',
-            { onClick: onClickBtn },
-            someData.length > 0 ? 'Hidden' : 'Watch'
+            { onClick: onToggleVisibility },
+            visibility ? 'Hide details' : 'Show details'
         ),
-        React.createElement(
-            'p',
+        visibility && React.createElement(
+            'div',
             null,
-            someData
+            React.createElement(
+                'p',
+                null,
+                'Some detail'
+            )
         )
     );
 
