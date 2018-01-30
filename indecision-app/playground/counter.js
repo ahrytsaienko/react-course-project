@@ -28,6 +28,11 @@ class Counter extends React.Component {
     };
 
     handleReset(e) {
+        this.setState(() =>{
+            return {
+                count : 0
+            }
+        });
     };
 
     render() {
