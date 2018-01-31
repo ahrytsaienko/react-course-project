@@ -1,3 +1,6 @@
+//stateless functional compontent
+
+
 class IndecisionApp extends React.Component {
     constructor(props) {
         super(props);
@@ -143,4 +146,15 @@ class AddOption extends React.Component {
     }
 }
 
-ReactDOM.render(<IndecisionApp />, document.getElementById('app'));
+// functional statemant compontent 
+// (doesn't have access to "this", need to use arguments)
+const User = (props) => {
+    return (
+        <div>
+            <p>Name: {props.name}</p>
+            <p>Age: </p>
+        </div>
+    );
+}
+
+ReactDOM.render(<User name='John' />, document.getElementById('app'));
