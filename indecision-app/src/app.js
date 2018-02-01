@@ -148,13 +148,15 @@ class AddOption extends React.Component {
 
 // functional statemant compontent 
 // (doesn't have access to "this", need to use arguments)
-const User = (props) => {
-    return (
-        <div>
-            <p>Name: {props.name}</p>
-            <p>Age: </p>
-        </div>
-    );
-}
+// const User = (props) => {
+//     return (
+//         <div>
+//             <p>Name: {props.name}</p>
+//             <p>Age: </p>
+//         </div>
+//     );
+// }
 
-ReactDOM.render(<User name='John' />, document.getElementById('app'));
+ReactDOM.render(<IndecisionApp />, document.getElementById('app'));
+
+// ReactDOM.render(<User name='John' />, document.getElementById('app'));

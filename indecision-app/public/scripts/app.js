@@ -272,24 +272,15 @@ var AddOption = function (_React$Component6) {
 
 // functional statemant compontent 
 // (doesn't have access to "this", need to use arguments)
+// const User = (props) => {
+//     return (
+//         <div>
+//             <p>Name: {props.name}</p>
+//             <p>Age: </p>
+//         </div>
+//     );
+// }
 
+ReactDOM.render(React.createElement(IndecisionApp, null), document.getElementById('app'));
 
-var User = function User(props) {
-    return React.createElement(
-        'div',
-        null,
-        React.createElement(
-            'p',
-            null,
-            'Name: ',
-            props.name
-        ),
-        React.createElement(
-            'p',
-            null,
-            'Age: '
-        )
-    );
-};
-
-ReactDOM.render(React.createElement(User, { name: 'John' }), document.getElementById('app'));
+// ReactDOM.render(<User name='John' />, document.getElementById('app'));
