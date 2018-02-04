@@ -7,6 +7,7 @@ class IndecisionApp extends React.Component {
         this.handleDeleteOptions = this.handleDeleteOptions.bind(this);
         this.handlePickOption = this.handlePickOption.bind(this);
         this.handleAddOption = this.handleAddOption.bind(this);
+        this.handleDeleteOption = this.handleDeleteOption.bind(this)
 
         this.state = {
             options: props.options
@@ -15,17 +16,13 @@ class IndecisionApp extends React.Component {
 
     //handleDeleteOptions
     handleDeleteOptions() {
-        this.setState(() => ({ options: 0 }));
+        this.setState(() => ({ options: []}));
     }
-    //     this.setState(() => {
-    //         return {
-    //             options: []
-    //         }
-    //     })
-    // 
 
+    handleDeleteOption(option) {
+        console.log('hdo', option);
+    }
     
-
     //handlePickOption
     handlePickOption(prevState) {
         return alert(this.state.options[Math.floor(Math.random() * this.state.options.length)])
@@ -38,11 +35,7 @@ class IndecisionApp extends React.Component {
             return `This option ${option} already exists`
         }
 
-        this.setState((prevState) => {
-            return {
-                options: prevState.options.concat([option])
-            }
-        });
+        this.setState((prevState) => ({ options: prevState.options.concat([option]) }))
     }
 
     render() {
@@ -59,6 +52,7 @@ class IndecisionApp extends React.Component {
                 <Options
                     options={this.state.options}
                     handleDeleteOptions={this.handleDeleteOptions}
+                    handleDeleteOption={this.handleDeleteOption}
                 />
                 <AddOption
                     handleAddOption={this.handleAddOption}
@@ -177,11 +171,7 @@ class AddOption extends React.Component {
         const option = e.target.elements.option.value.trim();
         const error = this.props.handleAddOption(option);
 
-        this.setState(() => {
-            return {
-                error: error
-            }
-        });
+        this.setState(() => ({ error }))
 
     };
 
