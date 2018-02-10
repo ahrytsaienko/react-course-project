@@ -20,7 +20,7 @@ class IndecisionApp extends React.Component {
     }
 
     componentDidUpdate(){
-        (console.log('componentDidUpdate'))
+        (console.log('componentDidUpdate  '))
     }
 
     //handleDeleteOptions
