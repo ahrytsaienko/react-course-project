@@ -30,18 +30,23 @@ var IndecisionApp = function (_React$Component) {
         return _this;
     }
 
-    //lifecicle method
+    //lifecicle method (only available in classes)
 
 
     _createClass(IndecisionApp, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
-            console.log('componentDidMount');
+            console.log('fetching data');
         }
     }, {
         key: 'componentDidUpdate',
-        value: function componentDidUpdate() {
-            console.log('componentDidUpdate  ');
+        value: function componentDidUpdate(prevProps, prevState) {
+            console.log('saving data');
+        }
+    }, {
+        key: 'componentWillUnmount',
+        value: function componentWillUnmount() {
+            console.log('unMount');
         }
 
         //handleDeleteOptions

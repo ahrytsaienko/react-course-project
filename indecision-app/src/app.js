@@ -14,13 +14,17 @@ class IndecisionApp extends React.Component {
         }
     }
 
-    //lifecicle method
+    //lifecicle method (only available in classes)
     componentDidMount(){
-        (console.log('componentDidMount')); 
+        (console.log('fetching data')); 
     }
 
-    componentDidUpdate(){
-        (console.log('componentDidUpdate  '))
+    componentDidUpdate(prevProps, prevState){
+        (console.log('saving data'));
+    }
+
+    componentWillUnmount() {
+        (console.log ('unMount'));
     }
 
     //handleDeleteOptions
