@@ -30,10 +30,23 @@ var IndecisionApp = function (_React$Component) {
         return _this;
     }
 
-    //handleDeleteOptions
+    //lifecicle method
 
 
     _createClass(IndecisionApp, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            console.log('componentDidMount');
+        }
+    }, {
+        key: 'componentDidUpdate',
+        value: function componentDidUpdate() {
+            console.log('componentDidUpdate  ');
+        }
+
+        //handleDeleteOptions
+
+    }, {
         key: 'handleDeleteOptions',
         value: function handleDeleteOptions() {
             this.setState(function () {
