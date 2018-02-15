@@ -16,11 +16,17 @@ class IndecisionApp extends React.Component {
 
     //lifecicle method (only available in classes)
     componentDidMount(){
-        (console.log('fetching data')); 
+        const json = localStorage.getItem('options');
+        const options = JSON.parse(json);
+
+        this.setState(() => ({options: options}))
     }
 
     componentDidUpdate(prevProps, prevState){
-        (console.log('saving data'));
+        if (prevState.options.length != this.state.options.length) {
+          const json = JSON.stringify(this.state.options);
+          localStorage.setItem('options', json);
+        }
     }
 
     componentWillUnmount() {
