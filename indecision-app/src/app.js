@@ -14,7 +14,7 @@ class IndecisionApp extends React.Component {
         }
     }
 
-    //lifecicle method (only available in classes)
+    //lifecicle method (only available in classes) parse json in local storage
     componentDidMount(){
         const json = localStorage.getItem('options');
         const options = JSON.parse(json);
