@@ -65,9 +65,44 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils_js__ = __webpack_require__(1);
+// import './utils.js';
+
+
+
 
 console.log("app.js is running doesn't change");
+ console.log(__WEBPACK_IMPORTED_MODULE_0__utils_js__["c" /* square */](4));
+console.log(__WEBPACK_IMPORTED_MODULE_0__utils_js__["b" /* minus */](10, 4))
+console.log(__WEBPACK_IMPORTED_MODULE_0__utils_js__["a" /* default */](100, 50))
+
+/***/ }),
+/* 1 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "c", function() { return square; });
+/* unused harmony export add */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return subtract; });
+console.log("utils.js is running");
+
+// 2 types of exorts
+
+//1 named exports
+const square = (x) => x * x;
+const add = (a, b) => a + b;
+const minus = (a , b) => a - b;
+/* harmony export (immutable) */ __webpack_exports__["b"] = minus;
+
+
+//2 default exports
+const subtract = (a, b) => a - b;
+
+
 
 /***/ })
 /******/ ]);
