@@ -1,9 +1,9 @@
-// import './utils.js';
+// install -> import -> use
 
-import anithyingIWant, { square, add, minus } from './utils.js'
+import React from 'react';
+import ReactDOM from 'react-dom';
 
+const template = <p>This jsx from webpack</p>
 
-console.log("app.js is running doesn't change");
- console.log(square(4));
-console.log(minus(10, 4))
-console.log(anithyingIWant(100, 50))
+ReactDOM.render(template, document.getElementById('app'));
+
