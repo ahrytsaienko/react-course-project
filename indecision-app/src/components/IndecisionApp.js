@@ -19,7 +19,7 @@ export default class IndecisionApp extends React.Component {
             options: prevState.options.filter((option) => optionToRemove !== option)
         }));
     }
-    handlePick =() => {
+    handlePick = () => {
         const randomNum = Math.floor(Math.random() * this.state.options.length);
         const option = this.state.options[randomNum];
         alert(option);
@@ -57,7 +57,7 @@ export default class IndecisionApp extends React.Component {
     componentWillUnmount = () => {
         console.log('componentWillUnmount');
     }
-    
+
     render() {
         const subtitle = 'Put your life in the hands of a computer';
 
