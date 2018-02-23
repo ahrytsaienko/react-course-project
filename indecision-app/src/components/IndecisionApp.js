@@ -3,12 +3,14 @@ import Header from './Header';
 import Action from './Action';
 import Options from './Options';
 import AddOption from './AddOption';
+import OptionModal from './OptionModal';
 
 // stateless functional component
 
 export default class IndecisionApp extends React.Component {
     state = {
-        options: []
+        options: [],
+        selectedOption: undefined
     }
 
     handleDeleteOptions = () => {
@@ -22,8 +24,12 @@ export default class IndecisionApp extends React.Component {
     handlePick = () => {
         const randomNum = Math.floor(Math.random() * this.state.options.length);
         const option = this.state.options[randomNum];
-        alert(option);
-    }
+        // use setState to set 
+        this.setState(() => ({ 
+            selectedOption: option 
+        }));
+        
+    };
     handleAddOption = (option) => {
         if (!option) {
             return 'Enter valid value to add item';
@@ -76,6 +82,8 @@ export default class IndecisionApp extends React.Component {
                 <AddOption
                     handleAddOption={this.handleAddOption}
                 />
+                <OptionModal
+                    selectedOption={this.state.selectedOption} />
             </div>
         );
     }
